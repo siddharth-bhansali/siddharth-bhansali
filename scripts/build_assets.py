@@ -125,11 +125,11 @@ def header(t, name):
         <div class="avatar raised"><span class="inset">SB</span></div>
         <div class="main">
           <h1>Siddharth Bhansali</h1>
-          <div class="role">Software Engineer @ Ajackus · India</div>
+          <div class="role">Technical Lead Manager @ Ajackus · India</div>
           <div class="term inset"><b>~ $</b> connecting AI agents to 900+ APIs <span class="cursor"></span></div>
         </div>
         <div class="chips">
-          <div class="chip raised-sm"><i></i>Building at One</div>
+          <div class="chip raised-sm"><i></i>Leading a team at One</div>
           <div class="chip raised-sm">TypeScript · Rust</div>
           <div class="chip raised-sm">AI agents · MCP</div>
         </div>
@@ -138,12 +138,12 @@ def header(t, name):
 
 
 ABOUT = [
-    "<b>3 years building One</b>, the integration layer that gives AI agents access to 900+ APIs",
+    "Leading a <b>4-engineer integration team</b> at One, the platform that gives AI agents access to 900+ APIs",
     "Built the <b>AI pipeline</b> that turns API docs into agent-ready integrations",
     "Building a multi-tenant <b>GRC platform</b> for a Big Four firm with Next.js, Django &amp; Azure Kubernetes",
     "Working across One's <b>Rust core</b>: OAuth, credential checks, composed actions",
-    "Automating my delivery with <b>Claude Code</b> skills &amp; agents",
-    "Side quest: <b>SoftUI</b>, the neumorphic CSS library this README is styled with",
+    "Driving <b>AI-assisted development</b> with Claude Code across the team",
+    "Side quest: <b>SoftUI</b>, the neumorphic CSS library this README is styled with (3,900+ downloads)",
 ]
 
 PLATFORMS = ["Gmail", "Stripe", "Slack", "Jira", "Notion", "HubSpot", "GitHub"]
@@ -198,17 +198,18 @@ def about(t, name):
 
 CARDS = [
     ("420+", "API integrations built or rebuilt", 45, "45% of One's 937"),
+    ("20,000+", "developers building on One", None, None),
+    ("~100K", "API calls a day through the catalogue", None, None),
     ("30+", "OAuth connectors shipped", None, None),
     ("70%", "smaller AI-agent knowledge payloads", None, None),
     ("1,000+", "pull requests across 30+ repos", None, None),
-    ("3,000+", "commits to One's platform", None, None),
 ]
 
 
 def highlights(t, name):
     css = f"""
-    .cards {{ display: flex; gap: 20px; }}
-    .card {{ flex: 1; border-radius: 16px; padding: 22px 18px; display: flex; flex-direction: column; gap: 6px; height: 150px; box-sizing: border-box; }}
+    .cards {{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px 20px; }}
+    .card {{ border-radius: 16px; padding: 20px 22px; display: flex; flex-direction: column; gap: 6px; height: 132px; box-sizing: border-box; }}
     .value {{ font-size: 32px; font-weight: 800; color: {t["primary"]}; letter-spacing: -0.5px; }}
     .label {{ font-size: 13px; line-height: 1.4; font-weight: 500; }}
     .track {{ margin-top: auto; height: 10px; border-radius: 9999px; overflow: hidden; }}
@@ -224,7 +225,7 @@ def highlights(t, name):
         cards += (f'<div class="card raised fade" style="animation-delay:{i * .1:.1f}s">'
                   f'<div class="value">{v}</div><div class="label">{label}</div>{meter}</div>')
     body = f'<div class="root"><div class="title">Highlights at One</div><div class="cards">{cards}</div></div>'
-    return svg(t, 270, css, body)
+    return svg(t, 392, css, body)
 
 
 STACK = [

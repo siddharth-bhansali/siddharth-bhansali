@@ -35,11 +35,11 @@
         <div class="avatar raised"><span class="inset">SB</span></div>
         <div class="main">
           <h1>Siddharth Bhansali</h1>
-          <div class="role">Software Engineer @ Ajackus · India</div>
+          <div class="role">Technical Lead Manager @ Ajackus · India</div>
           <div class="term inset"><b>~ $</b> connecting AI agents to 900+ APIs <span class="cursor"></span></div>
         </div>
         <div class="chips">
-          <div class="chip raised-sm"><i></i>Building at One</div>
+          <div class="chip raised-sm"><i></i>Leading a team at One</div>
           <div class="chip raised-sm">TypeScript · Rust</div>
           <div class="chip raised-sm">AI agents · MCP</div>
         </div>
