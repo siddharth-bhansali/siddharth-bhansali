@@ -10,7 +10,7 @@
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/siddharth-bhansali/siddharth-bhansali/main/assets/stack-dark.svg" /><img width="100%" src="https://raw.githubusercontent.com/siddharth-bhansali/siddharth-bhansali/main/assets/stack-light.svg" alt="Tech stack: TypeScript, Rust, Python, PHP, Node.js, Next.js, React, NestJS, Django, Laravel, Postgres, Redis, Docker, Kubernetes, Terraform, GCP, GitHub Actions, Claude Code, MCP, pnpm" /></picture>
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/siddharth-bhansali/siddharth-bhansali/main/assets/activity-dark.svg" /><img width="100%" src="https://raw.githubusercontent.com/siddharth-bhansali/siddharth-bhansali/main/assets/activity-light.svg" alt="GitHub activity: contributions, current streak and longest streak" /></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/siddharth-bhansali/siddharth-bhansali/main/assets/activity-dark.svg" /><img width="100%" src="https://raw.githubusercontent.com/siddharth-bhansali/siddharth-bhansali/main/assets/activity-light.svg" alt="GitHub activity: all-time and last-12-months contributions, share of active days, contributions per month and by weekday" /></picture>
 
 <div align="center">
   <picture>
