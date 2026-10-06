@@ -29,15 +29,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   activity:
-    # Redraws the SoftUI "Activity" panel from GitHub's API. PROFILE_STATS_TOKEN is a classic
-    # PAT (repo, read:org) so private client work is counted; without it the step is a no-op.
+    # Redraws the SoftUI "Activity" panel from GitHub's API using the built-in token
+    # (calendar data needs no extra access; the breakdown comes from activity_breakdown.json).
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
       - run: python3 scripts/build_activity.py
         env:
-          PROFILE_STATS_TOKEN: ${{ secrets.PROFILE_STATS_TOKEN }}
+          STATS_TOKEN: ${{ github.token }}
 
       - name: Commit if changed
         run: |

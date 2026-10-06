@@ -3,12 +3,13 @@
 Top: all-time contributions, the last 12 months, code reviews in the last 12 months.
 Bottom: contributions per month (columns) and the work mix (100% stacked bar).
 
-Private work (e.g. client orgs) only counts when the token can see it, so the workflow
-uses a classic PAT stored as the PROFILE_STATS_TOKEN secret (scopes: repo, read:org).
-Without a token, or if the API fails, the existing images are left untouched.
+Calendar numbers (totals, monthly bars) include private work as anonymous counts, so any
+token can read them - the workflow uses its built-in GITHUB_TOKEN. The per-type breakdown of
+private client work can't be read from the cloud (client orgs block personal tokens), so the
+review count and work mix come from scripts/activity_breakdown.json.
+If the API fails, the existing images are left untouched.
 
-Usage: PROFILE_STATS_TOKEN=... python scripts/build_activity.py
-       (locally: PROFILE_STATS_TOKEN=$(gh auth token) python scripts/build_activity.py)
+Usage: STATS_TOKEN=... python scripts/build_activity.py   (locally: STATS_TOKEN=$(gh auth token))
 """
 import json
 import os
@@ -18,6 +19,8 @@ from collections import OrderedDict
 from datetime import date, datetime, timedelta, timezone
 
 from build_assets import OUT, THEMES, svg
+
+BREAKDOWN = __import__("pathlib").Path(__file__).with_name("activity_breakdown.json")
 
 USER = "siddharth-bhansali"
 API = "https://api.github.com/graphql"
@@ -60,11 +63,11 @@ def fetch(token):
         cc = gql(token, q_year, {"u": USER, "from": start.isoformat(), "to": end.isoformat()})
         all_time += cc["user"]["contributionsCollection"]["contributionCalendar"]["totalContributions"]
 
-    # Last 12 months (the API's default window): totals, daily calendar and the work mix.
+    # Last 12 months (the API's default window): totals and the daily calendar.
     cc = gql(token, """query($u:String!){user(login:$u){contributionsCollection{
-      contributionCalendar{totalContributions weeks{contributionDays{date contributionCount}}}
-      totalCommitContributions totalPullRequestContributions totalPullRequestReviewContributions}}}""",
+      contributionCalendar{totalContributions weeks{contributionDays{date contributionCount}}}}}}""",
              {"u": USER})["user"]["contributionsCollection"]
+    breakdown = json.loads(BREAKDOWN.read_text(encoding="utf-8"))
     months = OrderedDict()
     for week in cc["contributionCalendar"]["weeks"]:
         for day in week["contributionDays"]:
@@ -74,10 +77,9 @@ def fetch(token):
         "first_year": first_year,
         "all_time": all_time,
         "last_year": cc["contributionCalendar"]["totalContributions"],
-        "reviews": cc["totalPullRequestReviewContributions"],
+        "reviews": breakdown["reviews"],
         "monthly": list(months.items())[-12:],  # last 12 calendar months, the current one partial
-        "mix": {"commits": cc["totalCommitContributions"], "reviews": cc["totalPullRequestReviewContributions"],
-                "prs": cc["totalPullRequestContributions"]},
+        "mix": breakdown["mix"],
     }
 
 
@@ -175,9 +177,9 @@ def activity(t, name, d):
 
 
 def main():
-    token = os.environ.get("PROFILE_STATS_TOKEN")
+    token = os.environ.get("STATS_TOKEN")
     if not token:
-        print("PROFILE_STATS_TOKEN not set, skipping")
+        print("STATS_TOKEN not set, skipping")
         return 0
     try:
         data = fetch(token)
