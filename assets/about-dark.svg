@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="500" viewBox="0 0 940 500">
+  <foreignObject x="0" y="0" width="940" height="500">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+    .root { box-sizing: border-box; width: 940px; background: #2A2D35; border-radius: 24px;
+            font-family: 'Plus Jakarta Sans', -apple-system, 'Segoe UI', Roboto, sans-serif; color: #E2E8F0; padding: 30px; }
+    .raised { background: #2A2D35; box-shadow: 6px 6px 14px #1E2027, -6px -6px 14px #33363F; }
+    .raised-sm { background: #2A2D35; box-shadow: 3px 3px 8px #1E2027, -3px -3px 8px #33363F; }
+    .inset { background: #2A2D35; box-shadow: inset 3px 3px 8px #1E2027, inset -3px -3px 8px #33363F; }
+    .title { display: flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 700;
+             margin: 0 0 22px 4px; }
+    .title::before { content: ''; width: 6px; height: 20px; border-radius: 9999px; background: #8B85FF; }
+    .fade { animation: rise .6s ease-out both; }
+    @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+    
+    .wrap { display: flex; gap: 30px; align-items: center; }
+    ul { list-style: none; margin: 0; padding: 0; flex: 1; display: flex; flex-direction: column; gap: 12px; }
+    li { display: flex; align-items: center; gap: 14px; padding: 11px 16px; border-radius: 14px;
+         font-size: 14px; line-height: 1.4; }
+    li b { color: #8B85FF; font-weight: 700; }
+    .dot { flex: none; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .dot::after { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #8B85FF; }
+    .flow { position: relative; width: 340px; height: 300px; flex: none; }
+    .flow svg.wires { position: absolute; inset: 0; }
+    .wire { fill: none; stroke: #4A4E5A; stroke-width: 1.6; stroke-dasharray: 3 6; animation: flow 1.4s linear infinite; }
+    .node { position: absolute; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; }
+    .agent { left: 0; top: 124px; width: 82px; height: 52px; border-radius: 14px; flex-direction: column; gap: 2px; }
+    .agent small { font-size: 9.5px; color: #9BA5B8; font-weight: 500; }
+    .hub { left: 112px; top: 120px; width: 60px; height: 60px; border-radius: 50%; color: #8B85FF;
+           font-size: 15px; font-weight: 800; }
+    .pill { left: 226px; width: 112px; height: 26px; border-radius: 9999px; animation: glow 4s ease-in-out infinite; }
+    .more { color: #9BA5B8; font-weight: 500; }
+    @keyframes flow { to { stroke-dashoffset: -18; } }
+    @keyframes glow { 0%, 70%, 100% { color: #E2E8F0; } 80% { color: #8B85FF; } }
+     .root { height: 500px; box-sizing: border-box; }</style>
+      <div class="root">
+        <div class="title">About me</div>
+        <div class="wrap">
+          <ul><li class="raised-sm fade" style="animation-delay:0.00s"><span class="dot inset"></span><span><b>3 years building One</b>, the integration layer that gives AI agents access to 900+ APIs</span></li><li class="raised-sm fade" style="animation-delay:0.08s"><span class="dot inset"></span><span>Built the <b>AI pipeline</b> that turns API docs into agent-ready integrations</span></li><li class="raised-sm fade" style="animation-delay:0.16s"><span class="dot inset"></span><span>Building a multi-tenant <b>GRC platform</b> for a Big Four firm with Next.js, Django &amp; Azure Kubernetes</span></li><li class="raised-sm fade" style="animation-delay:0.24s"><span class="dot inset"></span><span>Working across One's <b>Rust core</b>: OAuth, credential checks, composed actions</span></li><li class="raised-sm fade" style="animation-delay:0.32s"><span class="dot inset"></span><span>Automating my delivery with <b>Claude Code</b> skills &amp; agents</span></li><li class="raised-sm fade" style="animation-delay:0.40s"><span class="dot inset"></span><span>Side quest: <b>SoftUI</b>, the neumorphic CSS library this README is styled with</span></li></ul>
+          <div class="flow">
+            <svg class="wires" width="340" height="300" xmlns="http://www.w3.org/2000/svg"><path class="wire" d="M82 150 L112 150"/><path class="wire" d="M172 150 C200 150 200 19 226 19"/><path class="wire" d="M172 150 C200 150 200 55 226 55"/><path class="wire" d="M172 150 C200 150 200 91 226 91"/><path class="wire" d="M172 150 C200 150 200 127 226 127"/><path class="wire" d="M172 150 C200 150 200 163 226 163"/><path class="wire" d="M172 150 C200 150 200 199 226 199"/><path class="wire" d="M172 150 C200 150 200 235 226 235"/><path class="wire" d="M172 150 C200 150 200 271 226 271"/></svg>
+            <div class="node agent raised">AI agent<small>"send invoice"</small></div>
+            <div class="node hub raised">One</div>
+            <div class="node pill raised-sm" style="top:6px;animation-delay:0.0s">Gmail</div><div class="node pill raised-sm" style="top:42px;animation-delay:0.5s">Stripe</div><div class="node pill raised-sm" style="top:78px;animation-delay:1.0s">Slack</div><div class="node pill raised-sm" style="top:114px;animation-delay:1.5s">Jira</div><div class="node pill raised-sm" style="top:150px;animation-delay:2.0s">Notion</div><div class="node pill raised-sm" style="top:186px;animation-delay:2.5s">HubSpot</div><div class="node pill raised-sm" style="top:222px;animation-delay:3.0s">GitHub</div><div class="node pill inset more" style="top:258px">+930 more</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="196" height="84" viewBox="0 0 196 84">
+  <foreignObject x="0" y="0" width="196" height="84">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+    .root { box-sizing: border-box; width: 940px; background: #E4E9F0; border-radius: 24px;
+            font-family: 'Plus Jakarta Sans', -apple-system, 'Segoe UI', Roboto, sans-serif; color: #2D3748; padding: 30px; }
+    .raised { background: #E4E9F0; box-shadow: 6px 6px 14px #B8C0CC, -6px -6px 14px #FFFFFF; }
+    .raised-sm { background: #E4E9F0; box-shadow: 3px 3px 8px #B8C0CC, -3px -3px 8px #FFFFFF; }
+    .inset { background: #E4E9F0; box-shadow: inset 3px 3px 8px #B8C0CC, inset -3px -3px 8px #FFFFFF; }
+    .title { display: flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 700;
+             margin: 0 0 22px 4px; }
+    .title::before { content: ''; width: 6px; height: 20px; border-radius: 9999px; background: #5B54E0; }
+    .fade { animation: rise .6s ease-out both; }
+    @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+    
+    .plate { box-sizing: border-box; height: 84px; background: #E4E9F0; border-radius: 0; padding: 18px 10px;
+             font-family: 'Plus Jakarta Sans', -apple-system, 'Segoe UI', Roboto, sans-serif; color: #2D3748; }
+    .btn { height: 48px; border-radius: 9999px; display: flex; align-items: center; justify-content: center;
+           gap: 10px; font-size: 14px; font-weight: 700; }
+    .btn img { width: 18px; height: 18px; }
+     .root { height: 84px; box-sizing: border-box; }</style>
+      <div class="plate"><div class="btn raised-sm"><img src="data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMkQzNzQ4IiByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+WDwvdGl0bGU+PHBhdGggZD0iTTE0LjIzNCAxMC4xNjIgMjIuOTc3IDBoLTIuMDcybC03LjU5MSA4LjgyNEw3LjI1MSAwSC4yNThsOS4xNjggMTMuMzQzTC4yNTggMjRIMi4zM2w4LjAxNi05LjMxOEwxNi43NDkgMjRoNi45OTN6bS0yLjgzNyAzLjI5OS0uOTI5LTEuMzI5TDMuMDc2IDEuNTZoMy4xODJsNS45NjUgOC41MzIuOTI5IDEuMzI5IDcuNzU0IDExLjA5aC0zLjE4MnoiLz48L3N2Zz4="/>@DeathStalkerSid</div></div>
+    </div>
+  </foreignObject>
+</svg>
