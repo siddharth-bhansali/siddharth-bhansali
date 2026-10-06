@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="940" height="392" viewBox="0 0 940 392">
-  <foreignObject x="0" y="0" width="940" height="392">
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="282" viewBox="0 0 940 282">
+  <foreignObject x="0" y="0" width="940" height="282">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <style>
     .root { box-sizing: border-box; width: 940px; background: #E4E9F0; border-radius: 24px;
@@ -13,17 +13,19 @@
     .fade { animation: rise .6s ease-out both; }
     @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
     
-    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px 20px; }
-    .card { border-radius: 16px; padding: 20px 22px; display: flex; flex-direction: column; gap: 6px; height: 132px; box-sizing: border-box; }
+    .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .card { border-radius: 16px; padding: 20px 18px 18px; display: flex; flex-direction: column; gap: 6px;
+            height: 162px; box-sizing: border-box; }
     .value { font-size: 32px; font-weight: 800; color: #5B54E0; letter-spacing: -0.5px; }
     .label { font-size: 13px; line-height: 1.4; font-weight: 500; }
-    .track { margin-top: auto; height: 10px; border-radius: 9999px; overflow: hidden; }
-    .fill { height: 100%; border-radius: 9999px; background: #5B54E0; transform-origin: left;
-            animation: grow 1.4s .6s ease-out both; }
-    .meta { font-size: 11px; color: #5A6A7E; }
+    .foot { flex: none; margin-top: auto; position: relative; height: 26px; border-radius: 9999px; overflow: hidden;
+            display: flex; align-items: center; padding: 0 12px; font-size: 11px; font-weight: 600; color: #5A6A7E; }
+    .foot .fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 9999px; background: #5B54E0;
+                  opacity: .22; transform-origin: left; animation: grow 1.4s .6s ease-out both; }
+    .foot span { position: relative; }
     @keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-     .root { height: 392px; box-sizing: border-box; }</style>
-      <div class="root"><div class="title">Highlights at One</div><div class="cards"><div class="card raised fade" style="animation-delay:0.0s"><div class="value">420+</div><div class="label">API integrations built or rebuilt</div><div class="track inset"><div class="fill" style="width:45%"></div></div><div class="meta">45% of One's 937</div></div><div class="card raised fade" style="animation-delay:0.1s"><div class="value">20,000+</div><div class="label">developers building on One</div></div><div class="card raised fade" style="animation-delay:0.2s"><div class="value">~100K</div><div class="label">API calls a day through the catalogue</div></div><div class="card raised fade" style="animation-delay:0.3s"><div class="value">30+</div><div class="label">OAuth connectors shipped</div></div><div class="card raised fade" style="animation-delay:0.4s"><div class="value">70%</div><div class="label">smaller AI-agent knowledge payloads</div></div><div class="card raised fade" style="animation-delay:0.5s"><div class="value">1,000+</div><div class="label">pull requests across 30+ repos</div></div></div></div>
+     .root { height: 282px; box-sizing: border-box; }</style>
+      <div class="root"><div class="title">Highlights at One</div><div class="cards"><div class="card raised fade" style="animation-delay:0.0s"><div class="value">45%</div><div class="label">of One's integrations built or rebuilt by me</div><div class="foot inset"><div class="fill" style="width:45%"></div><span>and counting</span></div></div><div class="card raised fade" style="animation-delay:0.1s"><div class="value">70%</div><div class="label">smaller AI-agent knowledge payloads</div><div class="foot inset"><div class="fill" style="width:70%"></div><span>958k → 291k characters</span></div></div><div class="card raised fade" style="animation-delay:0.2s"><div class="value">1,000+</div><div class="label">pull requests</div><div class="foot inset"><span>across 30+ repos</span></div></div><div class="card raised fade" style="animation-delay:0.3s"><div class="value">3,000+</div><div class="label">commits</div><div class="foot inset"><span>since Dec 2023</span></div></div></div></div>
     </div>
   </foreignObject>
 </svg>

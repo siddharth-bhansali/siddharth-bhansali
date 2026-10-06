@@ -13,7 +13,7 @@
     .fade { animation: rise .6s ease-out both; }
     @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
     
-    .root { display: flex; align-items: center; gap: 28px; padding: 34px 36px; }
+    .root { display: flex; align-items: center; gap: 28px; padding: 34px 40px; }
     .avatar { width: 96px; height: 96px; border-radius: 50%; display: flex; align-items: center;
               justify-content: center; font-size: 34px; font-weight: 800; color: #5B54E0; flex: none; }
     .avatar span { width: 76px; height: 76px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
@@ -32,7 +32,6 @@
     @keyframes pulse { 50% { opacity: .35; } }
      .root { height: 200px; box-sizing: border-box; }</style>
       <div class="root">
-        <div class="avatar raised"><span class="inset">SB</span></div>
         <div class="main">
           <h1>Siddharth Bhansali</h1>
           <div class="role">Technical Lead Manager @ Ajackus · India</div>

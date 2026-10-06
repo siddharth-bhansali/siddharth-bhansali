@@ -103,7 +103,7 @@ LINKEDIN = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path f
 
 def header(t, name):
     css = f"""
-    .root {{ display: flex; align-items: center; gap: 28px; padding: 34px 36px; }}
+    .root {{ display: flex; align-items: center; gap: 28px; padding: 34px 40px; }}
     .avatar {{ width: 96px; height: 96px; border-radius: 50%; display: flex; align-items: center;
               justify-content: center; font-size: 34px; font-weight: 800; color: {t["primary"]}; flex: none; }}
     .avatar span {{ width: 76px; height: 76px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }}
@@ -122,7 +122,6 @@ def header(t, name):
     @keyframes pulse {{ 50% {{ opacity: .35; }} }}
     """
     body = f'''<div class="root">
-        <div class="avatar raised"><span class="inset">SB</span></div>
         <div class="main">
           <h1>Siddharth Bhansali</h1>
           <div class="role">Technical Lead Manager @ Ajackus · India</div>
@@ -180,7 +179,7 @@ def about(t, name):
     pills = "".join(
         f'<div class="node pill raised-sm" style="top:{y}px;animation-delay:{i * .5}s">{p}</div>'
         for i, (y, p) in enumerate(zip(tops, PLATFORMS)))
-    pills += f'<div class="node pill inset more" style="top:{tops[7]}px">+930 more</div>'
+    pills += f'<div class="node pill inset more" style="top:{tops[7]}px">+ hundreds more</div>'
     body = f'''<div class="root">
         <div class="title">About me</div>
         <div class="wrap">
@@ -197,35 +196,36 @@ def about(t, name):
 
 
 CARDS = [
-    ("420+", "API integrations built or rebuilt", 45, "45% of One's 937"),
-    ("20,000+", "developers building on One", None, None),
-    ("~100K", "API calls a day through the catalogue", None, None),
-    ("30+", "OAuth connectors shipped", None, None),
-    ("70%", "smaller AI-agent knowledge payloads", None, None),
-    ("1,000+", "pull requests across 30+ repos", None, None),
+    # value, label, fill % (None = no fill), footer text
+    ("45%", "of One's integrations built or rebuilt by me", 45, "and counting"),
+    ("70%", "smaller AI-agent knowledge payloads", 70, "958k → 291k characters"),
+    ("1,000+", "pull requests", None, "across 30+ repos"),
+    ("3,000+", "commits", None, "since Dec 2023"),
 ]
 
 
 def highlights(t, name):
     css = f"""
-    .cards {{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px 20px; }}
-    .card {{ border-radius: 16px; padding: 20px 22px; display: flex; flex-direction: column; gap: 6px; height: 132px; box-sizing: border-box; }}
+    .cards {{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }}
+    .card {{ border-radius: 16px; padding: 20px 18px 18px; display: flex; flex-direction: column; gap: 6px;
+            height: 162px; box-sizing: border-box; }}
     .value {{ font-size: 32px; font-weight: 800; color: {t["primary"]}; letter-spacing: -0.5px; }}
     .label {{ font-size: 13px; line-height: 1.4; font-weight: 500; }}
-    .track {{ margin-top: auto; height: 10px; border-radius: 9999px; overflow: hidden; }}
-    .fill {{ height: 100%; border-radius: 9999px; background: {t["primary"]}; transform-origin: left;
-            animation: grow 1.4s .6s ease-out both; }}
-    .meta {{ font-size: 11px; color: {t["muted"]}; }}
+    .foot {{ flex: none; margin-top: auto; position: relative; height: 26px; border-radius: 9999px; overflow: hidden;
+            display: flex; align-items: center; padding: 0 12px; font-size: 11px; font-weight: 600; color: {t["muted"]}; }}
+    .foot .fill {{ position: absolute; left: 0; top: 0; bottom: 0; border-radius: 9999px; background: {t["primary"]};
+                  opacity: .22; transform-origin: left; animation: grow 1.4s .6s ease-out both; }}
+    .foot span {{ position: relative; }}
     @keyframes grow {{ from {{ transform: scaleX(0); }} to {{ transform: scaleX(1); }} }}
     """
     cards = ""
-    for i, (v, label, pct, meta) in enumerate(CARDS):
-        meter = (f'<div class="track inset"><div class="fill" style="width:{pct}%"></div></div>'
-                 f'<div class="meta">{meta}</div>') if pct else ""
+    for i, (v, label, pct, foot) in enumerate(CARDS):
+        fill = f'<div class="fill" style="width:{pct}%"></div>' if pct else ""
         cards += (f'<div class="card raised fade" style="animation-delay:{i * .1:.1f}s">'
-                  f'<div class="value">{v}</div><div class="label">{label}</div>{meter}</div>')
+                  f'<div class="value">{v}</div><div class="label">{label}</div>'
+                  f'<div class="foot inset">{fill}<span>{foot}</span></div></div>')
     body = f'<div class="root"><div class="title">Highlights at One</div><div class="cards">{cards}</div></div>'
-    return svg(t, 392, css, body)
+    return svg(t, 282, css, body)
 
 
 STACK = [
