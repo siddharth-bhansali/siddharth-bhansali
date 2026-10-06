@@ -42,8 +42,14 @@ def base_css(t):
     """
 
 
+# Transparent space under every panel/button. GitHub strips margins and `vspace`, so the
+# gap between stacked README images has to live inside the images (it scales with them).
+GAP = 12
+
+
 def svg(t, height, css, body, width=W):
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">
+    outer = height + GAP
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{outer}" viewBox="0 0 {width} {outer}">
   <foreignObject x="0" y="0" width="{width}" height="{height}">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <style>{base_css(t)}{css} .root {{ height: {height}px; box-sizing: border-box; }}</style>
