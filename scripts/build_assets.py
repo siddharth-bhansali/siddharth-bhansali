@@ -131,7 +131,7 @@ def header(t, name):
         <div class="main">
           <h1>Siddharth Bhansali</h1>
           <div class="role">Technical Lead Manager @ Ajackus · India</div>
-          <div class="term inset"><b>~ $</b> connecting AI agents to 900+ APIs <span class="cursor"></span></div>
+          <div class="term inset"><b>~ $</b> connecting AI agents to 1,000+ APIs <span class="cursor"></span></div>
         </div>
         <div class="chips">
           <div class="chip raised-sm"><i></i>Leading a team at One</div>
@@ -143,7 +143,7 @@ def header(t, name):
 
 
 ABOUT = [
-    "Leading a <b>4-engineer integration team</b> at One, the platform that gives AI agents access to 900+ APIs",
+    "Leading a <b>4-engineer integration team</b> at One, the platform that gives AI agents access to 1,000+ APIs",
     "Built the <b>AI pipeline</b> that turns API docs into agent-ready integrations",
     "Building a multi-tenant <b>GRC platform</b> for a Big Four firm with Next.js, Django &amp; Azure Kubernetes",
     "Working across One's <b>Rust core</b>: OAuth, credential checks, composed actions",
